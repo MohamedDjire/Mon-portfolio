@@ -190,17 +190,6 @@ section h2 {
     justify-content: center;
     border-bottom: 1px solid #e5e7eb;
     position: relative;
-    overflow: hidden;
-}
-
-.project-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
 }
 
 .placeholder-image {
@@ -209,7 +198,7 @@ section h2 {
     background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
     border-radius: 16px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,7 +212,7 @@ section h2 {
     height: 50px;
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
     border-radius: 10px;
-    opacity: 0.15;
+    opacity: 0.2;
     position: absolute;
 }
 
@@ -233,19 +222,15 @@ section h2 {
     height: 30px;
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
     border-radius: 6px;
-    opacity: 0.25;
+    opacity: 0.3;
     position: absolute;
-    transform: translate(15px, -15px);
+    transform: translate(18px, -18px);
 }
 
 /* Icônes spécifiques pour chaque projet */
 /* Projet 1 - Gestion Stock (Bleu/Violet) */
 .project-card:nth-child(1) .project-image {
     background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
-}
-
-.project-card:nth-child(1) .project-image::before {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.04) 0%, rgba(139, 92, 246, 0.04) 100%);
 }
 
 .project-card:nth-child(1) .placeholder-image {
@@ -258,7 +243,7 @@ section h2 {
     border-radius: 8px;
     width: 45px;
     height: 45px;
-    opacity: 0.2;
+    opacity: 0.25;
 }
 
 .project-card:nth-child(1) .placeholder-image::after {
@@ -267,16 +252,12 @@ section h2 {
     height: 25px;
     border-radius: 4px;
     transform: translate(18px, -18px);
-    opacity: 0.3;
+    opacity: 0.35;
 }
 
 /* Projet 2 - Application Mobile (Vert) */
 .project-card:nth-child(2) .project-image {
     background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-}
-
-.project-card:nth-child(2) .project-image::before {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.04) 0%, rgba(5, 150, 105, 0.04) 100%);
 }
 
 .project-card:nth-child(2) .placeholder-image {
@@ -289,7 +270,7 @@ section h2 {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    opacity: 0.2;
+    opacity: 0.25;
 }
 
 .project-card:nth-child(2) .placeholder-image::after {
@@ -298,16 +279,12 @@ section h2 {
     height: 20px;
     border-radius: 50%;
     transform: translate(20px, -20px);
-    opacity: 0.3;
+    opacity: 0.35;
 }
 
 /* Projet 3 - Site Web Transport (Orange) */
 .project-card:nth-child(3) .project-image {
     background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-}
-
-.project-card:nth-child(3) .project-image::before {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.04) 0%, rgba(217, 119, 6, 0.04) 100%);
 }
 
 .project-card:nth-child(3) .placeholder-image {
@@ -320,7 +297,7 @@ section h2 {
     border-radius: 4px;
     width: 40px;
     height: 40px;
-    opacity: 0.2;
+    opacity: 0.25;
     transform: rotate(45deg);
 }
 
@@ -330,7 +307,7 @@ section h2 {
     height: 28px;
     border-radius: 4px;
     transform: translate(18px, -18px) rotate(-45deg);
-    opacity: 0.3;
+    opacity: 0.35;
 }
 
 .project-content {
