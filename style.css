@@ -6,14 +6,16 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
+    --primary-color: #4f46e5;
+    --primary-light: #6366f1;
+    --secondary-color: #5b21b6;
     --text-color: #1f2937;
     --text-light: #6b7280;
     --bg-light: #f9fafb;
     --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --accent-color: #8b5cf6;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -46,8 +48,9 @@ nav .container {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
+    font-weight: 600;
+    color: #6366f1;
+    letter-spacing: -0.5px;
 }
 
 .nav-links {
@@ -64,12 +67,12 @@ nav .container {
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: #6366f1;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
     color: var(--white);
     padding: 6rem 0;
     text-align: center;
@@ -89,17 +92,19 @@ nav .container {
 .btn-primary {
     display: inline-block;
     background: var(--white);
-    color: var(--primary-color);
+    color: #6366f1;
     padding: 1rem 2rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    background: #f9fafb;
 }
 
 /* Sections */
@@ -144,8 +149,15 @@ section h2 {
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: var(--primary-color);
+    color: #6366f1;
     box-shadow: var(--shadow);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s;
+}
+
+.skill-tag:hover {
+    border-color: #6366f1;
+    transform: translateY(-2px);
 }
 
 /* Projects Section */
@@ -172,14 +184,153 @@ section h2 {
 .project-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
 }
 
 .placeholder-image {
-    font-size: 4rem;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.placeholder-image::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 10px;
+    opacity: 0.15;
+    position: absolute;
+}
+
+.placeholder-image::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 6px;
+    opacity: 0.25;
+    position: absolute;
+    transform: translate(15px, -15px);
+}
+
+/* Icônes spécifiques pour chaque projet */
+/* Projet 1 - Gestion Stock (Bleu/Violet) */
+.project-card:nth-child(1) .project-image {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+}
+
+.project-card:nth-child(1) .project-image::before {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.04) 0%, rgba(139, 92, 246, 0.04) 100%);
+}
+
+.project-card:nth-child(1) .placeholder-image {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+    border-color: rgba(99, 102, 241, 0.15);
+}
+
+.project-card:nth-child(1) .placeholder-image::before {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    opacity: 0.2;
+}
+
+.project-card:nth-child(1) .placeholder-image::after {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    transform: translate(18px, -18px);
+    opacity: 0.3;
+}
+
+/* Projet 2 - Application Mobile (Vert) */
+.project-card:nth-child(2) .project-image {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+}
+
+.project-card:nth-child(2) .project-image::before {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.04) 0%, rgba(5, 150, 105, 0.04) 100%);
+}
+
+.project-card:nth-child(2) .placeholder-image {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    border-color: rgba(16, 185, 129, 0.15);
+}
+
+.project-card:nth-child(2) .placeholder-image::before {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+}
+
+.project-card:nth-child(2) .placeholder-image::after {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translate(20px, -20px);
+    opacity: 0.3;
+}
+
+/* Projet 3 - Site Web Transport (Orange) */
+.project-card:nth-child(3) .project-image {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.project-card:nth-child(3) .project-image::before {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.04) 0%, rgba(217, 119, 6, 0.04) 100%);
+}
+
+.project-card:nth-child(3) .placeholder-image {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border-color: rgba(245, 158, 11, 0.15);
+}
+
+.project-card:nth-child(3) .placeholder-image::before {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.2;
+    transform: rotate(45deg);
+}
+
+.project-card:nth-child(3) .placeholder-image::after {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    transform: translate(18px, -18px) rotate(-45deg);
+    opacity: 0.3;
 }
 
 .project-content {
@@ -212,8 +363,9 @@ section h2 {
     content: "✓";
     position: absolute;
     left: 0;
-    color: var(--primary-color);
+    color: #6366f1;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .project-links {
@@ -222,18 +374,21 @@ section h2 {
 
 .btn-link {
     display: inline-block;
-    color: var(--primary-color);
+    color: #6366f1;
     text-decoration: none;
     font-weight: 600;
-    border: 2px solid var(--primary-color);
+    border: 2px solid #6366f1;
     padding: 0.5rem 1.5rem;
     border-radius: 6px;
-    transition: background 0.3s, color 0.3s;
+    transition: all 0.3s;
+    background: transparent;
 }
 
 .btn-link:hover {
-    background: var(--primary-color);
+    background: #6366f1;
     color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 /* Services Section */
@@ -262,8 +417,10 @@ section h2 {
 }
 
 .service-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    opacity: 0.8;
+    filter: grayscale(20%);
 }
 
 .service-card h3 {
@@ -303,12 +460,24 @@ section h2 {
     background: #25D366;
 }
 
+.contact-btn.whatsapp:hover {
+    background: #20ba5a;
+}
+
 .contact-btn.email {
-    background: var(--primary-color);
+    background: #6366f1;
+}
+
+.contact-btn.email:hover {
+    background: #4f46e5;
 }
 
 .contact-btn.github {
     background: #24292e;
+}
+
+.contact-btn.github:hover {
+    background: #1a1e22;
 }
 
 .contact-btn:hover {
